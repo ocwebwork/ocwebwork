@@ -531,8 +531,7 @@
       <div class="ct-line"><b>Serving</b>San Juan Capistrano · Mission Viejo · Rancho Santa Margarita · Ladera Ranch · Laguna Niguel · all of South OC</div>
     </div>
     <div class="cform">
-      <form id="contactForm" action="https://formspree.io/f/OCWEBWORK_FORM_ID" method="POST">
-        <input type="hidden" name="_subject" value="New project request — OC Web Work">
+      <form id="contactForm">
         <!-- honeypot spam trap -->
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
         <div class="frow">
@@ -604,26 +603,44 @@
     set(range.value);
   })();
 
-  // Formspree AJAX submit — shows success message instead of redirecting
+  // Google Sheets form submit
   (function(){
+    // Paste your Apps Script Web App URL here after deploying (step 4 below)
+    var SHEET_URL = "PASTE_YOUR_APPS_SCRIPT_URL_HERE";
+
     var form = document.getElementById('contactForm');
     var success = document.getElementById('formSuccess');
+    var btn = form.querySelector('button[type="submit"]');
     if (!form) return;
+
     form.addEventListener('submit', function(e){
       e.preventDefault();
-      var data = new FormData(form);
-      fetch(form.action, {
+      // Ignore if honeypot filled (bot)
+      if (form.querySelector('[name="_gotcha"]').value) return;
+
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+
+      var payload = {
+        name:             form.querySelector('[name="name"]').value,
+        business:         form.querySelector('[name="business"]').value,
+        current_website:  form.querySelector('[name="current_website"]').value,
+        email:            form.querySelector('[name="email"]').value,
+        budget:           form.querySelector('[name="budget"]').value,
+        message:          form.querySelector('[name="message"]').value
+      };
+
+      fetch(SHEET_URL, {
         method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      }).then(function(r){
-        if (r.ok) {
-          form.style.display = 'none';
-          success.style.display = 'block';
-        } else {
-          alert('Something went wrong — please email hello@ocwebwork.com directly.');
-        }
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function(){
+        form.style.display = 'none';
+        success.style.display = 'block';
       }).catch(function(){
+        btn.disabled = false;
+        btn.textContent = 'Send project request →';
         alert('Something went wrong — please email hello@ocwebwork.com directly.');
       });
     });
