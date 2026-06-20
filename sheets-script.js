@@ -1,41 +1,36 @@
-// Paste this entire file into Google Apps Script (instructions below).
-// It receives contact form submissions and appends them as rows in your sheet.
-
-const SHEET_NAME = "Submissions";
+// ============================================================
+// OC Web Work — contact form handler for Google Sheets
+// Paste this whole file into the Apps Script editor, Save, then
+// Deploy > Manage deployments > edit (pencil) > New version > Deploy.
+// IMPORTANT: "Who has access" MUST be set to "Anyone".
+// ============================================================
 
 function doPost(e) {
   try {
-    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_NAME);
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
 
-    // Create the header row on first submission if the sheet is empty
+    // Add a header row the first time
     if (sheet.getLastRow() === 0) {
-      sheet.appendRow([
-        "Timestamp",
-        "Name",
-        "Business",
-        "Current Website",
-        "Email",
-        "Budget",
-        "Message"
-      ]);
+      sheet.appendRow(["Timestamp", "Name", "Business", "Current Website", "Email", "Budget", "Message"]);
       sheet.getRange(1, 1, 1, 7).setFontWeight("bold").setBackground("#1B1A16").setFontColor("#CE8E16");
       sheet.setFrozenRows(1);
     }
 
-    var data = JSON.parse(e.postData.contents);
+    // Accept BOTH form-encoded fields and raw JSON, so it works no matter how the site sends it
+    var d = (e && e.parameter) ? e.parameter : {};
+    if ((!d.name && !d.email) && e && e.postData && e.postData.contents) {
+      try { d = JSON.parse(e.postData.contents); } catch (ignore) {}
+    }
 
     sheet.appendRow([
       new Date().toLocaleString("en-US", { timeZone: "America/Los_Angeles" }),
-      data.name        || "",
-      data.business    || "",
-      data.current_website || "",
-      data.email       || "",
-      data.budget      || "",
-      data.message     || ""
+      d.name            || "",
+      d.business        || "",
+      d.current_website || "",
+      d.email           || "",
+      d.budget          || "",
+      d.message         || ""
     ]);
-
-    // Auto-resize columns for readability
-    sheet.autoResizeColumns(1, 7);
 
     return ContentService
       .createTextOutput(JSON.stringify({ result: "ok" }))
@@ -48,9 +43,9 @@ function doPost(e) {
   }
 }
 
-// Handles CORS preflight from the browser
+// Visiting the URL in a browser shows this — confirms the app is reachable.
 function doGet(e) {
   return ContentService
-    .createTextOutput(JSON.stringify({ result: "ok" }))
+    .createTextOutput(JSON.stringify({ result: "ok", message: "OC Web Work form endpoint is live." }))
     .setMimeType(ContentService.MimeType.JSON);
 }
