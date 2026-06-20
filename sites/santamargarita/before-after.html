@@ -9,84 +9,38 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --purple:#8A39AD; --purple-dk:#6E2C8C; --plum:#2A1238; --green:#5DA63A;
-    --lav:#D9B8EC; --ink:#241229; --paper:#F8F4FA; --line:#E6DCEE;
+    --purple:#8A39AD; --purple-dk:#6E2C8C; --plum:#2A1238; --green:#5DA63A; --line:#E6DCEE;
   }
   *{box-sizing:border-box;}
-  body{margin:0;background:#ECE4F2;font-family:"Mulish",system-ui,sans-serif;color:var(--ink);
+  body{margin:0;background:#ECE4F2;font-family:"Mulish",system-ui,sans-serif;color:#241229;
     min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px 18px;-webkit-font-smoothing:antialiased;}
-  .panel{width:100%;max-width:760px;}
+  .panel{width:100%;max-width:860px;}
   .panel-head{text-align:center;margin-bottom:16px;}
-  .panel-head .kk{font-family:"Mulish";font-weight:800;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--purple-dk);}
-  .panel-head h1{font-family:"Fraunces",serif;font-weight:700;font-size:clamp(22px,4vw,30px);color:var(--ink);margin:8px 0 0;}
+  .panel-head .kk{font-weight:800;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--purple-dk);}
+  .panel-head h1{font-family:"Fraunces",serif;font-weight:700;font-size:clamp(22px,4vw,30px);margin:8px 0 0;}
   .panel-head p{font-size:14px;color:#6b5d70;margin:8px 0 0;}
 
   .ba{border:1.5px solid var(--plum);border-radius:12px;overflow:hidden;background:var(--plum);box-shadow:0 24px 50px -28px rgba(42,18,56,.6);}
   .ba-chrome{display:flex;align-items:center;gap:7px;padding:10px 13px;background:var(--plum);border-bottom:1px solid #3f2750;}
   .ba-dot{width:10px;height:10px;border-radius:50%;background:#5a4168;}
-  .ba-url{margin-left:8px;font-family:"Mulish";font-weight:600;font-size:11.5px;color:#b59cc4;background:#3a2350;padding:4px 11px;border-radius:4px;flex:1;}
-  .ba-tag{font-family:"Mulish";font-weight:800;font-size:10px;letter-spacing:.08em;color:var(--green);}
-  .ba-stage{position:relative;aspect-ratio:16/10;background:#fff;user-select:none;overflow:hidden;}
+  .ba-url{margin-left:8px;font-weight:600;font-size:11.5px;color:#b59cc4;background:#3a2350;padding:4px 11px;border-radius:4px;flex:1;}
+  .ba-tag{font-weight:800;font-size:10px;letter-spacing:.08em;color:var(--green);}
+
+  /* stage holds two stacked images */
+  .ba-stage{position:relative;aspect-ratio:2880/1640;background:#fff;user-select:none;overflow:hidden;}
   .ba-layer{position:absolute;inset:0;overflow:hidden;}
+  .ba-layer img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;display:block;}
   .ba-after{z-index:1;}
   .ba-before{z-index:2;clip-path:inset(0 0 0 var(--split,50%));}
-  .ba-pin{position:absolute;top:12px;z-index:5;font-family:"Mulish";font-weight:800;font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:3px;}
+
+  .ba-pin{position:absolute;top:12px;z-index:5;font-weight:800;font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:3px;}
   .pin-before{right:12px;background:#c0392b;color:#fff;}
-  .pin-after{left:12px;background:var(--plum);color:var(--green);}
+  .pin-after{left:12px;background:var(--plum);color:#8FD15F;}
   .ba-range{position:absolute;inset:0;width:100%;height:100%;z-index:10;margin:0;opacity:0;cursor:ew-resize;}
   .ba-handle{position:absolute;top:0;bottom:0;left:var(--split,50%);width:3px;background:var(--green);z-index:6;transform:translateX(-1.5px);pointer-events:none;}
-  .ba-knob{position:absolute;top:50%;left:var(--split,50%);transform:translate(-50%,-50%);z-index:7;width:42px;height:42px;border-radius:50%;background:var(--green);border:3px solid #fff;display:flex;align-items:center;justify-content:center;pointer-events:none;box-shadow:0 4px 14px rgba(0,0,0,.3);}
-  .ba-knob svg{width:20px;height:20px;color:#143000;}
-  .ba-cap{font-family:"Mulish";font-weight:600;font-size:12px;color:#6b5d70;text-align:center;padding:11px;background:#fff;border-top:1px solid var(--line);}
-
-  /* ===== mini mockups ===== */
-  .mock{position:absolute;inset:0;font-size:10px;}
-
-  /* AFTER — the new redesign */
-  .m-after{background:var(--paper);}
-  .ma-top{display:flex;align-items:center;justify-content:space-between;padding:9px 14px;border-bottom:1px solid var(--line);background:#fff;}
-  .ma-brand{display:flex;align-items:center;gap:8px;}
-  .ma-brand svg{width:30px;height:28px;flex:none;}
-  .ma-brand b{font-family:"Fraunces",serif;font-weight:700;font-size:12px;color:var(--ink);line-height:1;}
-  .ma-brand span{font-size:6.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--purple-dk);font-weight:700;display:block;margin-top:2px;}
-  .ma-nav{display:flex;align-items:center;gap:12px;font-weight:700;font-size:8px;color:#5b4d62;}
-  .ma-cta{background:var(--purple);color:#fff;font-weight:800;font-size:8px;padding:6px 11px;border-radius:7px;}
-  .ma-hero{position:relative;background:var(--navy,#46205C);padding:18px 16px 20px;overflow:hidden;}
-  .ma-hero{background:#46205C;}
-  .ma-hero::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 88% 6%,rgba(93,166,58,.28),transparent 55%);}
-  .ma-hero .in{position:relative;z-index:2;max-width:70%;}
-  .ma-eyebrow{font-weight:800;font-size:7px;letter-spacing:.14em;text-transform:uppercase;color:var(--lav);display:flex;align-items:center;gap:6px;margin-bottom:8px;}
-  .ma-eyebrow::before{content:"";width:16px;height:2px;background:var(--green);display:inline-block;}
-  .ma-h{font-family:"Fraunces",serif;font-weight:700;font-size:18px;line-height:1.05;color:#fff;letter-spacing:-.01em;}
-  .ma-h em{font-style:italic;color:#8FD15F;}
-  .ma-sub{font-size:8.5px;color:#d9c8e6;margin:7px 0 11px;max-width:90%;}
-  .ma-btns{display:flex;gap:7px;align-items:center;}
-  .ma-call{background:var(--purple);color:#fff;font-weight:800;font-size:8px;padding:7px 12px;border-radius:7px;}
-  .ma-ghost{border:1.5px solid rgba(255,255,255,.4);color:#fff;font-weight:800;font-size:8px;padding:6px 11px;border-radius:7px;}
-  .ma-seal{position:absolute;top:14px;right:14px;z-index:3;width:54px;height:54px;}
-  .ma-strip{display:flex;background:#fff;border-top:1px solid var(--line);}
-  .ma-strip div{flex:1;padding:7px 9px;font-weight:700;font-size:7px;color:#5b4d62;border-right:1px solid var(--line);display:flex;align-items:center;gap:5px;}
-  .ma-strip div:last-child{border-right:0;}
-  .ma-strip i{width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;flex:none;}
-
-  /* BEFORE — dated current site */
-  .m-before{background:#f3f3ef;text-align:center;font-family:Arial,Helvetica,sans-serif;color:#222;}
-  .mb-alert{background:#c0142c;color:#fff;font-weight:bold;font-size:8.5px;padding:5px;}
-  .mb-top{background:#1763c8;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:7px 12px;}
-  .mb-logo{display:flex;align-items:center;gap:6px;}
-  .mb-drop{font-size:18px;}
-  .mb-logo b{font-size:12px;font-weight:bold;font-family:"Times New Roman",Georgia,serif;}
-  .mb-phone{font-size:11px;font-weight:bold;background:#ffd400;color:#1763c8;padding:3px 7px;border-radius:3px;}
-  .mb-nav{background:#0e4ea0;color:#bfe0ff;font-size:8px;padding:5px;}
-  .mb-nav span{margin:0 5px;text-decoration:underline;}
-  .mb-body{padding:14px 12px;}
-  .mb-welcome{color:#1763c8;font-weight:bold;font-size:14px;font-style:italic;font-family:"Times New Roman",Georgia,serif;}
-  .mb-clip{font-size:30px;margin:8px 0;}
-  .mb-txt{font-size:9px;color:#444;max-width:80%;margin:0 auto 8px;line-height:1.4;}
-  .mb-btn{background:#ffd400;color:#1763c8;font-weight:bold;font-size:9px;border:2px outset #fff;padding:4px 9px;display:inline-block;}
-  .mb-foot{font-size:7px;color:#888;margin-top:10px;}
-
-  @media (max-width:520px){ .ma-nav{display:none;} .ma-h{font-size:15px;} }
+  .ba-knob{position:absolute;top:50%;left:var(--split,50%);transform:translate(-50%,-50%);z-index:7;width:44px;height:44px;border-radius:50%;background:var(--green);border:3px solid #fff;display:flex;align-items:center;justify-content:center;pointer-events:none;box-shadow:0 4px 14px rgba(0,0,0,.3);}
+  .ba-knob svg{width:21px;height:21px;color:#143000;}
+  .ba-cap{font-weight:600;font-size:12px;color:#6b5d70;text-align:center;padding:11px;background:#fff;border-top:1px solid var(--line);}
 </style>
 </head>
 <body>
@@ -104,73 +58,16 @@
         <span class="ba-tag">DRAG TO COMPARE →</span>
       </div>
       <div class="ba-stage">
-
         <!-- AFTER (underneath) -->
         <div class="ba-layer ba-after">
           <span class="ba-pin pin-after">After</span>
-          <div class="mock m-after">
-            <div class="ma-top">
-              <div class="ma-brand">
-                <svg viewBox="0 0 52 48" aria-hidden="true">
-                  <path d="M2 30 L13 12 L21 23 L30 8 L41 23 L50 30 Z" fill="#8A39AD"/>
-                  <path d="M0 39 Q26 33 52 39 L52 48 L0 48 Z" fill="#5DA63A"/>
-                  <g fill="#241229">
-                    <path d="M5 39 V30 H15 V39 Z"/><path d="M3.5 30.5 L10 24 L16.5 30.5 Z"/>
-                    <path d="M19 40 V29 H29 V40 Z"/><path d="M17.5 29.5 L24 23 L30.5 29.5 Z"/>
-                    <path d="M33 39 V30 H43 V39 Z"/><path d="M31.5 30.5 L38 24 L44.5 30.5 Z"/>
-                  </g>
-                </svg>
-                <span><b>Santa Margarita</b><span>Plumbing · Heating · Air</span></span>
-              </div>
-              <div class="ma-nav"><span>Services</span><span>About</span><span>Service Area</span><span class="ma-cta">Request service</span></div>
-            </div>
-            <div class="ma-hero">
-              <svg class="ma-seal" viewBox="0 0 100 100" aria-hidden="true">
-                <circle cx="50" cy="50" r="46" fill="#2A1238"/>
-                <circle cx="50" cy="50" r="46" fill="none" stroke="#8A39AD" stroke-width="3"/>
-                <circle cx="50" cy="50" r="38" fill="none" stroke="#5DA63A" stroke-width="2" opacity=".7"/>
-                <text x="50" y="45" text-anchor="middle" fill="#fff" font-family="Fraunces,serif" font-weight="700" font-size="27">30+</text>
-                <text x="50" y="63" text-anchor="middle" fill="#D9B8EC" font-family="Mulish,sans-serif" font-weight="800" font-size="10" letter-spacing="1.5">YEARS</text>
-              </svg>
-              <div class="in">
-                <div class="ma-eyebrow">Your Neighborhood Plumber</div>
-                <div class="ma-h">Honest plumbing, <em>done right</em>.</div>
-                <div class="ma-sub">Trusted across Rancho Santa Margarita and South OC for over 30 years — on time, clean, and guaranteed.</div>
-                <div class="ma-btns">
-                  <span class="ma-call">📞 (949) 858-3818</span>
-                  <span class="ma-ghost">Request service</span>
-                </div>
-              </div>
-            </div>
-            <div class="ma-strip">
-              <div><i></i> Over 30 years</div>
-              <div><i></i> On time</div>
-              <div><i></i> Guaranteed work</div>
-              <div><i></i> Emergency service</div>
-            </div>
-          </div>
+          <img src="after.png" alt="Redesigned Santa Margarita Plumbing website">
         </div>
-
         <!-- BEFORE (on top, clipped) -->
         <div class="ba-layer ba-before" id="baBefore">
           <span class="ba-pin pin-before">Before</span>
-          <div class="mock m-before">
-            <div class="mb-alert">⚠ WATER SHORTAGE LEVEL 2 — CLICK HERE FOR INFO</div>
-            <div class="mb-top">
-              <div class="mb-logo"><span class="mb-drop">💧</span><b>Santa Margarita Plumbing Heating &amp; Air</b></div>
-              <span class="mb-phone">CALL (949) 858-3818</span>
-            </div>
-            <div class="mb-nav"><span>Home</span><span>About Us</span><span>Services</span><span>FAQs</span><span>Blog</span><span>Promotions</span><span>Posts</span></div>
-            <div class="mb-body">
-              <div class="mb-welcome">Welcome To Our Website!</div>
-              <div class="mb-clip">🔧🚿🏠</div>
-              <div class="mb-txt">Your Neighborhood Plumber for over 30 years. We do leak detection, drain cleaning, water heaters, re-pipes and more. Call us today for a quote!</div>
-              <span class="mb-btn">CONTACT US</span>
-              <div class="mb-foot">© Santa Margarita Plumbing · Site by Wix</div>
-            </div>
-          </div>
+          <img src="before.png" alt="Current Santa Margarita Plumbing website">
         </div>
-
         <div class="ba-handle" id="baHandle"></div>
         <div class="ba-knob" id="baKnob">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 7-5 5 5 5M15 7l5 5-5 5"/></svg>
