@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seaside Air Conditioning &amp; Heating — Orange County HVAC Since 1997</title>
+<meta name="description" content="Family-owned, NATE-certified HVAC contractor serving Orange County and Riverside County since 1997. AC and furnace repair, replacement, installation, and maintenance. CA Lic #736214.">
+
+<!-- Canonical — update to your client's real domain when they go live -->
+<link rel="canonical" href="https://seaside-demo.ocwebwork.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://seaside-demo.ocwebwork.com/">
+<meta property="og:title" content="Seaside Air Conditioning &amp; Heating — Orange County HVAC Since 1997">
+<meta property="og:description" content="Family-owned, NATE-certified HVAC contractor serving South Orange County since 1997. Honest pricing, same-day service, guaranteed work. Call (949) 496-3639.">
+<meta property="og:image" content="https://seaside-demo.ocwebwork.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Seaside Air Conditioning &amp; Heating">
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Seaside Air Conditioning &amp; Heating — Orange County HVAC Since 1997">
+<meta name="twitter:description" content="Family-owned, NATE-certified HVAC contractor serving South Orange County since 1997.">
+<meta name="twitter:image" content="https://seaside-demo.ocwebwork.com/og-image.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0E2A38;
+    --navy-2:#143949;
+    --teal:#0F8C99;
+    --teal-dk:#0B6B75;
+    --amber:#E2922E;
+    --amber-dk:#C97A1B;
+    --mist:#EEF3F3;
+    --sand:#F7F4EE;
+    --ink:#0E2A38;
+    --slate:#445660;
+    --line:#D6E0E1;
+    --white:#ffffff;
+    --maxw:1180px;
+    --r:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"Hanken Grotesk",system-ui,sans-serif;
+    color:var(--slate);
+    background:var(--white);
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:"Archivo",sans-serif;color:var(--ink);line-height:1.08;margin:0;font-stretch:expanded;}
+  a{color:var(--teal-dk);text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    font-family:"Archivo",sans-serif;font-weight:700;font-size:12.5px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--teal-dk);
+    display:inline-flex;align-items:center;gap:9px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--amber);display:inline-block;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:"Archivo",sans-serif;font-weight:700;font-size:15px;letter-spacing:.01em;
+    padding:15px 26px;border-radius:999px;border:2px solid transparent;
+    cursor:pointer;transition:transform .15s ease, background .2s ease, color .2s ease;
+    text-align:center;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-amber{background:var(--amber);color:#3a2407;}
+  .btn-amber:hover{background:var(--amber-dk);color:#fff;}
+  .btn-line{border-color:rgba(255,255,255,.5);color:#fff;}
+  .btn-line:hover{border-color:#fff;background:rgba(255,255,255,.08);}
+  .btn-teal{background:var(--teal);color:#fff;}
+  .btn-teal:hover{background:var(--teal-dk);}
+  .btn-ghost{border-color:var(--line);color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--teal);color:var(--teal-dk);}
+  :focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:4px;}
+
+  /* ===== Utility bar ===== */
+  .util{background:var(--navy);color:#cfe0e3;font-size:13.5px;}
+  .util .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:9px;padding-bottom:9px;flex-wrap:wrap;}
+  .util a{color:#cfe0e3;}
+  .util-left{display:flex;gap:22px;flex-wrap:wrap;align-items:center;}
+  .util-item{display:inline-flex;gap:8px;align-items:center;}
+  .util-item svg{width:15px;height:15px;flex:none;color:var(--teal);}
+  .util-right{display:inline-flex;gap:8px;align-items:center;font-family:"Archivo",sans-serif;font-weight:600;letter-spacing:.04em;color:#9fb6ba;}
+
+  /* ===== Header ===== */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px;gap:18px;}
+  .brand{display:flex;align-items:center;gap:13px;}
+  .brand-mark{width:42px;height:42px;flex:none;}
+  .brand-text strong{font-family:"Archivo",sans-serif;font-weight:800;font-size:18px;color:var(--ink);display:block;letter-spacing:.01em;line-height:1.05;font-stretch:expanded;}
+  .brand-text span{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal-dk);font-family:"Archivo",sans-serif;font-weight:600;}
+  nav.links{display:flex;gap:28px;align-items:center;}
+  nav.links a{font-family:"Archivo",sans-serif;font-weight:600;font-size:14.5px;color:var(--navy);letter-spacing:.01em;}
+  nav.links a:hover{color:var(--teal-dk);}
+  .nav-cta{display:flex;gap:12px;align-items:center;}
+  .menu-btn{display:none;background:none;border:0;cursor:pointer;color:var(--navy);}
+
+  /* ===== Hero ===== */
+  .hero{background:var(--navy);color:#dbe8ea;position:relative;overflow:hidden;}
+  .hero::after{content:"";position:absolute;inset:0;background:
+    radial-gradient(120% 90% at 88% 12%, rgba(15,140,153,.20), transparent 55%);pointer-events:none;}
+  .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;padding-top:72px;padding-bottom:80px;}
+  .hero h1{color:#fff;font-size:clamp(38px,5.2vw,62px);font-weight:800;letter-spacing:-.01em;}
+  .hero h1 em{font-style:normal;color:var(--amber);}
+  .hero .lede{font-size:19px;color:#bcd0d3;margin:22px 0 30px;max-width:46ch;}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;}
+  .hero-trust{display:flex;gap:26px;margin-top:38px;flex-wrap:wrap;}
+  .hero-trust div{border-left:2px solid var(--teal);padding-left:13px;}
+  .hero-trust b{font-family:"Archivo",sans-serif;color:#fff;font-size:22px;font-weight:700;display:block;line-height:1;}
+  .hero-trust small{font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;color:#9fb6ba;}
+
+  /* thermostat dial signature */
+  .dial-wrap{display:flex;justify-content:center;}
+  .dial{width:100%;max-width:360px;}
+  .dial text{font-family:"Archivo",sans-serif;}
+
+  /* ===== Section scaffolding ===== */
+  section{padding:84px 0;}
+  .sec-head{max-width:680px;margin-bottom:48px;}
+  .sec-head h2{font-size:clamp(28px,3.6vw,42px);font-weight:800;margin-top:14px;letter-spacing:-.01em;}
+  .sec-head p{margin-top:16px;font-size:18px;}
+
+  /* ===== Trust strip ===== */
+  .strip{background:var(--mist);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;}
+  .strip .wrap{display:flex;gap:40px;justify-content:space-between;flex-wrap:wrap;align-items:center;}
+  .strip-item{display:flex;gap:13px;align-items:center;}
+  .strip-item svg{width:26px;height:26px;color:var(--teal);flex:none;}
+  .strip-item b{font-family:"Archivo",sans-serif;color:var(--ink);font-weight:700;display:block;font-size:15px;}
+  .strip-item small{font-size:13px;color:var(--slate);}
+
+  /* ===== Services ===== */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .card{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+    padding:26px 24px;transition:border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+  }
+  .card:hover{border-color:var(--teal);transform:translateY(-3px);box-shadow:0 14px 30px -22px rgba(14,42,56,.5);}
+  .card .ico{
+    width:46px;height:46px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+    background:var(--mist);color:var(--teal-dk);margin-bottom:16px;
+  }
+  .card.warm .ico{background:#FBEFDD;color:var(--amber-dk);}
+  .card .ico svg{width:24px;height:24px;}
+  .card h3{font-size:18.5px;font-weight:700;margin-bottom:9px;}
+  .card p{font-size:15px;margin:0;color:var(--slate);}
+  .svc-note{margin-top:30px;font-size:15px;display:flex;gap:10px;align-items:center;color:var(--slate);}
+  .svc-note svg{width:18px;height:18px;color:var(--amber-dk);flex:none;}
+
+  /* ===== About ===== */
+  .about{background:var(--navy);color:#cfe0e3;}
+  .about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .about h2{color:#fff;}
+  .about .eyebrow{color:#5bc2cd;}
+  .about p{color:#bcd0d3;font-size:17px;margin:18px 0 0;}
+  .quote{
+    border-left:3px solid var(--amber);padding:6px 0 6px 22px;margin-top:26px;
+    font-size:19px;color:#eaf3f4;font-family:"Hanken Grotesk";font-style:italic;line-height:1.5;
+  }
+  .sig{margin-top:18px;font-family:"Archivo",sans-serif;font-weight:700;color:#fff;font-size:15px;letter-spacing:.02em;}
+  .sig span{display:block;font-weight:500;font-style:normal;color:#9fb6ba;font-size:13px;letter-spacing:.03em;text-transform:uppercase;margin-top:3px;}
+  .creds{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .cred{background:var(--navy-2);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px;}
+  .cred svg{width:26px;height:26px;color:var(--amber);margin-bottom:12px;}
+  .cred b{font-family:"Archivo",sans-serif;color:#fff;display:block;font-size:16px;font-weight:700;margin-bottom:4px;}
+  .cred small{color:#9fb6ba;font-size:13.5px;line-height:1.45;display:block;}
+
+  /* ===== Specials ===== */
+  .specials{background:var(--sand);}
+  .sp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .sp-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px 22px;display:flex;flex-direction:column;}
+  .sp-card.feature{background:var(--teal);border-color:var(--teal);color:#fff;}
+  .sp-tag{font-family:"Archivo",sans-serif;font-weight:700;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-dk);margin-bottom:14px;}
+  .sp-card.feature .sp-tag{color:#bdeef2;}
+  .sp-num{font-family:"Archivo",sans-serif;font-weight:800;font-size:38px;color:var(--ink);line-height:1;letter-spacing:-.02em;}
+  .sp-card.feature .sp-num{color:#fff;}
+  .sp-card h3{font-size:17px;font-weight:700;margin:8px 0 8px;}
+  .sp-card.feature h3{color:#fff;}
+  .sp-card p{font-size:14.5px;margin:0;flex:1;}
+  .sp-card.feature p{color:#d6f3f5;}
+  .sp-foot{margin-top:24px;text-align:center;font-size:14.5px;color:var(--slate);}
+
+  /* ===== Service area ===== */
+  .area .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:start;}
+  .counties{display:flex;flex-wrap:wrap;gap:9px;margin-top:8px;}
+  .pill{font-family:"Archivo",sans-serif;font-weight:600;font-size:13.5px;background:var(--mist);color:var(--navy);padding:8px 15px;border-radius:999px;border:1px solid var(--line);}
+  .pill.hub{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .area-counties{margin-top:26px;font-size:15px;}
+  .area-counties b{color:var(--ink);font-family:"Archivo",sans-serif;}
+
+  /* ===== Contact ===== */
+  .contact{background:var(--mist);}
+  .contact .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:54px;align-items:start;}
+  .ct-block{display:flex;gap:14px;margin-bottom:22px;}
+  .ct-block svg{width:22px;height:22px;color:var(--teal-dk);flex:none;margin-top:3px;}
+  .ct-block b{font-family:"Archivo",sans-serif;color:var(--ink);display:block;font-size:14px;letter-spacing:.04em;text-transform:uppercase;margin-bottom:3px;}
+  .ct-block a, .ct-block span{font-size:17px;color:var(--slate);}
+  .ct-block .big{font-size:22px;font-family:"Archivo",sans-serif;font-weight:700;color:var(--ink);}
+  .form{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px;}
+  .form h3{font-size:22px;font-weight:700;margin-bottom:6px;}
+  .form .fp{font-size:14.5px;margin-bottom:22px;}
+  .fld{margin-bottom:16px;}
+  .fld label{font-family:"Archivo",sans-serif;font-weight:600;font-size:13px;letter-spacing:.03em;color:var(--navy);display:block;margin-bottom:6px;}
+  .fld input,.fld textarea,.fld select{
+    width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:10px;
+    font-family:"Hanken Grotesk";font-size:15.5px;color:var(--ink);background:#fdfefe;
+  }
+  .fld input:focus,.fld textarea:focus,.fld select:focus{outline:none;border-color:var(--teal);}
+  .fld textarea{resize:vertical;min-height:110px;}
+  .form .row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .form .btn{width:100%;justify-content:center;margin-top:6px;}
+  .form-success{display:none;text-align:center;padding:30px;font-family:"Archivo",sans-serif;font-size:16px;color:var(--teal-dk);}
+
+  /* ===== Footer ===== */
+  footer{background:var(--navy);color:#9fb6ba;padding:54px 0 30px;}
+  footer .top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.1);}
+  footer .brand-text strong{color:#fff;}
+  footer p{font-size:14.5px;margin:16px 0 0;color:#9fb6ba;}
+  footer h4{font-family:"Archivo",sans-serif;color:#fff;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;}
+  footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;}
+  footer ul a{color:#bcd0d3;font-size:14.5px;}
+  footer ul a:hover{color:#fff;}
+  footer .bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:24px;font-size:13px;}
+  footer .bottom span{color:#7e979c;}
+
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;gap:36px;padding-top:54px;padding-bottom:60px;}
+    .dial-wrap{order:-1;}
+    .dial{max-width:280px;}
+    .svc-grid{grid-template-columns:repeat(2,1fr);}
+    .sp-grid{grid-template-columns:repeat(2,1fr);}
+    .about .wrap,.area .wrap,.contact .wrap{grid-template-columns:1fr;gap:36px;}
+    nav.links{display:none;}
+    .menu-btn{display:block;}
+    .nav-cta .btn-ghost{display:none;}
+  }
+  @media (max-width:560px){
+    section{padding:58px 0;}
+    .svc-grid,.sp-grid,.creds,.form .row{grid-template-columns:1fr;}
+    .util-left{gap:14px;}
+    .hero-trust{gap:18px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto;transition:none!important;}
+    .dial [data-spin]{animation:none!important;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Utility bar ===== -->
+<div class="util">
+  <div class="wrap">
+    <div class="util-left">
+      <a class="util-item" href="tel:+19494963639">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.4 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+        (949) 496-3639
+      </a>
+      <span class="util-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        Mon–Fri 8–5 · Sat 8–12
+      </span>
+      <span class="util-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        San Juan Capistrano, CA
+      </span>
+    </div>
+    <div class="util-right">CA LIC #736214 · NATE CERTIFIED</div>
+  </div>
+</div>
+
+<!-- ===== Header ===== -->
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Seaside Air Conditioning and Heating home">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <rect width="48" height="48" rx="11" fill="#0E2A38"/>
+        <path d="M9 30c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2 2.5-2 5-2 2.5 2 5 2" stroke="#0F8C99" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M9 36c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2 2.5-2 5-2 2.5 2 5 2" stroke="#2AA7B3" stroke-width="2.4" stroke-linecap="round" opacity=".65"/>
+        <circle cx="24" cy="17" r="6.5" fill="none" stroke="#E2922E" stroke-width="2.4"/>
+        <path d="M24 13.5V17l2.4 1.6" stroke="#E2922E" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-text">
+        <strong>SEASIDE</strong>
+        <span>Air Conditioning &amp; Heating</span>
+      </span>
+    </a>
+    <nav class="links" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#specials">Specials</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="tel:+19494963639">Call now</a>
+      <a class="btn btn-teal" href="#contact">Free estimate</a>
+    </div>
+    <button class="menu-btn" aria-label="Open menu" onclick="document.querySelector('nav.links').scrollIntoView()">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Family-owned in Orange County since 1997</span>
+      <h1>Comfort that holds, <em>warm or cool</em>, all year long.</h1>
+      <p class="lede">Honest, competitively priced HVAC service across South Orange County and Riverside County. Repairs, replacements, new installs, and maintenance — done right and guaranteed.</p>
+      <div class="hero-cta">
+        <a class="btn btn-amber" href="tel:+19494963639">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.4 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+          (949) 496-3639
+        </a>
+        <a class="btn btn-line" href="#contact">Request a free estimate</a>
+      </div>
+      <div class="hero-trust">
+        <div><b>28+ yrs</b><small>In business</small></div>
+        <div><b>NATE</b><small>Certified techs</small></div>
+        <div><b>$2,000</b><small>In available rebates</small></div>
+      </div>
+    </div>
+
+    <!-- Signature: thermostat dial -->
+    <div class="dial-wrap">
+      <svg class="dial" viewBox="0 0 320 320" role="img" aria-label="Thermostat set to a comfortable 72 degrees">
+        <circle cx="160" cy="160" r="150" fill="#143949"/>
+        <circle cx="160" cy="160" r="150" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+        <defs>
+          <linearGradient id="tempArc" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0" stop-color="#0F8C99"/>
+            <stop offset="1" stop-color="#E2922E"/>
+          </linearGradient>
+        </defs>
+        <circle cx="160" cy="160" r="118" fill="none" stroke="rgba(255,255,255,.10)" stroke-width="10" stroke-dasharray="2 10" stroke-linecap="round"/>
+        <circle cx="160" cy="160" r="118" fill="none" stroke="url(#tempArc)" stroke-width="10"
+                stroke-linecap="round" stroke-dasharray="556 741" transform="rotate(135 160 160)" data-spin>
+          <animate attributeName="stroke-dasharray" from="0 741" to="556 741" dur="1.4s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"/>
+        </circle>
+        <circle cx="160" cy="160" r="92" fill="#0E2A38"/>
+        <text x="160" y="150" text-anchor="middle" fill="#fff" font-size="58" font-weight="800">72°</text>
+        <text x="160" y="182" text-anchor="middle" fill="#5bc2cd" font-size="14" letter-spacing="3" font-weight="600">COOLING</text>
+        <text x="160" y="210" text-anchor="middle" fill="#8fa6ab" font-size="12" letter-spacing="2">SET FOR COMFORT</text>
+        <g stroke="#5bc2cd" stroke-width="3" stroke-linecap="round">
+          <line x1="66" y1="254" x2="74" y2="246"/>
+        </g>
+        <g stroke="#E2922E" stroke-width="3" stroke-linecap="round">
+          <line x1="246" y1="254" x2="254" y2="246"/>
+        </g>
+        <text x="58" y="276" text-anchor="middle" fill="#5bc2cd" font-size="12" font-weight="700">COOL</text>
+        <text x="262" y="276" text-anchor="middle" fill="#E2922E" font-size="12" font-weight="700">WARM</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Trust strip ===== -->
+<div class="strip">
+  <div class="wrap">
+    <div class="strip-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 5v6c0 5 3.4 8.6 8 11 4.6-2.4 8-6 8-11V5l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>
+      <div><b>Licensed &amp; insured</b><small>CA Contractor #736214</small></div>
+    </div>
+    <div class="strip-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="5"/><path d="m9 21 3-3 3 3 1-7H8l1 7z"/></svg>
+      <div><b>NATE certified</b><small>Recognized technical excellence</small></div>
+    </div>
+    <div class="strip-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>
+      <div><b>Family-owned</b><small>Honest, drug-free, local</small></div>
+    </div>
+    <div class="strip-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
+      <div><b>Work guaranteed</b><small>Quality &amp; unsurpassed service</small></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Services ===== -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What we do</span>
+      <h2>Full-service heating, cooling &amp; indoor air</h2>
+      <p>Residential and light commercial — from a quick repair to a complete new system. No job is too small, and no home is too large.</p>
+    </div>
+
+    <div class="svc-grid">
+      <div class="card warm">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18a4 4 0 0 0 3-7V4a2 2 0 1 0-4 0v7a4 4 0 0 0 1 7z"/><path d="M15 5h4M15 9h4M15 13h4"/></svg></div>
+        <h3>Furnace repair &amp; replacement</h3>
+        <p>Diagnosis and repair on all makes and models, plus efficient replacements when it's time. Wall heaters and hydronic (hydro) heating systems too.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="9" rx="2"/><path d="M6 18v1M10 18v2M14 18v2M18 18v1M6 9h.01M10 9h4"/></svg></div>
+        <h3>Air conditioner repair &amp; replacement</h3>
+        <p>Cooling-system repair and energy-efficient replacement for central, split, and packaged systems — keeping you comfortable through SoCal summers.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16v4H4zM4 13h16v4H4z"/><path d="M8 7V4m8 3V4M8 20v-3m8 3v-3"/></svg></div>
+        <h3>Ducting repair, replacement &amp; cleaning</h3>
+        <p>Duct repair, full replacement, and professional duct cleaning — including asbestos ducting abatement, handled safely.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3>Air filtration &amp; purification</h3>
+        <p>Whatever indoor air quality issue you're facing, we'll help you breathe easier with filtration and purification options built for your home.</p>
+      </div>
+      <div class="card warm">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <h3>Attic &amp; whole-house fans</h3>
+        <p>Attic fans, whole-house fans, exhaust systems, and make-up air systems to move heat out and keep your space comfortable and efficient.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><rect x="9" y="12" width="6" height="9"/></svg></div>
+        <h3>New &amp; custom installation</h3>
+        <p>Complete new heating and air systems — furnace, coil, AC, gas, electrical, ducting, registers, thermostat, and attic access. Custom homes and new construction welcome.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M3 9h18M8 21h8M12 17v4"/></svg></div>
+        <h3>Light commercial systems</h3>
+        <p>Split systems, packaged gas/electric, and packaged heat-pump systems for light commercial spaces, plus service on existing equipment.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 5v6c0 5 3.4 8.6 8 11 4.6-2.4 8-6 8-11V5l-8-3z"/><path d="M12 8v4l3 2"/></svg></div>
+        <h3>Maintenance contracts</h3>
+        <p>Monthly, quarterly, semi-annual, and annual plans that keep your system running efficiently and catch small issues before they get expensive.</p>
+      </div>
+      <div class="card warm">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Smart thermostats &amp; relocations</h3>
+        <p>Smart-thermostat installation and AC or furnace relocation when a remodel or new layout calls for moving your equipment.</p>
+      </div>
+    </div>
+
+    <p class="svc-note">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      Don't see your issue listed? We'd like to help with whatever air conditioning, heating, or indoor air quality problem you have. <a href="#contact">Just ask.</a>
+    </p>
+  </div>
+</section>
+
+<!-- ===== About ===== -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Who we are</span>
+      <h2>A family business that treats your home like ours</h2>
+      <p>Seaside Air Conditioning and Heating is a family-owned and operated company that has been in business since 1997. We're headquartered in South Orange County and pride ourselves on honesty, professionalism, and value-added service.</p>
+      <p>We have a reputation for finding the remedy to any air conditioning or heating problem — sometimes small and easy, sometimes major and complicated. Either way, we resolve it and maximize your comfort.</p>
+      <blockquote class="quote">"We will do whatever it takes to understand your needs and find a solution. We offer quality workmanship and unsurpassed service — and we guarantee it."</blockquote>
+      <div class="sig">Victor Serrao<span>President, Seaside Air Conditioning &amp; Heating</span></div>
+    </div>
+    <div class="creds">
+      <div class="cred">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 5v6c0 5 3.4 8.6 8 11 4.6-2.4 8-6 8-11V5l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>
+        <b>Licensed CA contractor</b>
+        <small>License #736214, fully insured and accountable.</small>
+      </div>
+      <div class="cred">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="5"/><path d="m9 21 3-3 3 3 1-7H8l1 7z"/></svg>
+        <b>NATE certified</b>
+        <small>An accreditation recognizing technical excellence.</small>
+      </div>
+      <div class="cred">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9h18M3 9l2-5h14l2 5M5 9v11h14V9"/><path d="M9 13h6"/></svg>
+        <b>True Value partner</b>
+        <small>Exclusive HVAC service provider to True Value Hardware stores in our area.</small>
+      </div>
+      <div class="cred">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M5 12H2m20 0h-3M7 7 5 5m12 2 2-2M7 17l-2 2m12-2 2 2"/></svg>
+        <b>Honest &amp; respectful</b>
+        <small>Competitively priced, service-oriented, and drug-free.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Specials ===== -->
+<section class="specials" id="specials">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Current offers</span>
+      <h2>Save now, and over the life of your system</h2>
+      <p>Carefully choosing the right system matters — over its lifetime, operating and maintaining it will far outweigh the purchase price. These offers help on both ends.</p>
+    </div>
+
+    <div class="sp-grid">
+      <div class="sp-card feature">
+        <div class="sp-tag">Tune-up special</div>
+        <div class="sp-num">$79</div>
+        <h3>Energy-saving tune-up &amp; cleaning</h3>
+        <p>Furnace or air conditioner inspection and cleaning to keep efficiency up and surprises down.</p>
+      </div>
+      <div class="sp-card">
+        <div class="sp-tag">Financing</div>
+        <div class="sp-num">18 mo</div>
+        <h3>No-interest financing</h3>
+        <p>Special financing arranged for customers — up to 18 months with no interest. Contact us for current promotions.</p>
+      </div>
+      <div class="sp-card">
+        <div class="sp-tag">Rebates</div>
+        <div class="sp-num">$2,000</div>
+        <h3>Tax credits &amp; rebates</h3>
+        <p>Take advantage of tax credits and government, utility, and manufacturer rebates — as much as $2,000.</p>
+      </div>
+      <div class="sp-card">
+        <div class="sp-tag">Heat pumps</div>
+        <div class="sp-num">New</div>
+        <h3>Switch &amp; save with heat pumps</h3>
+        <p>Save thousands over time by switching to heat-pump technology. Book an in-home comfort consultation.</p>
+      </div>
+    </div>
+    <p class="sp-foot">Offers are available for a limited time. Call <a href="tel:+19494963639">(949) 496-3639</a> or email us for details and current financing promotions.</p>
+  </div>
+</section>
+
+<!-- ===== Service area ===== -->
+<section class="area" id="area">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Where we work</span>
+      <h2>Serving Orange County, Riverside County &amp; beyond</h2>
+      <p style="margin-top:16px;">From our San Juan Capistrano headquarters, we cover South Orange County's coastal communities and inland areas — and travel well beyond for the right job.</p>
+      <p class="area-counties"><b>Counties served:</b> Orange, Riverside, Los Angeles, San Bernardino, Imperial, and San Diego.</p>
+    </div>
+    <div>
+      <div class="counties">
+        <span class="pill hub">San Juan Capistrano</span>
+        <span class="pill">Mission Viejo</span>
+        <span class="pill">Rancho Santa Margarita</span>
+        <span class="pill">Coto de Caza</span>
+        <span class="pill">Ladera Ranch</span>
+        <span class="pill">Laguna Niguel</span>
+        <span class="pill">Tustin</span>
+        <span class="pill">Anaheim</span>
+        <span class="pill">Fullerton</span>
+        <span class="pill">Garden Grove</span>
+        <span class="pill">Westminster</span>
+        <span class="pill">+ surrounding SoCal</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Get in touch</span>
+      <h2 style="font-size:clamp(28px,3.6vw,42px);margin-top:14px;">Ready when you are</h2>
+      <p style="margin:16px 0 30px;">Call us anytime, or send a message and we'll get right back to you. We offer quality workmanship and unsurpassed service — and we guarantee it.</p>
+
+      <div class="ct-block">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.4 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+        <div><b>Sales &amp; Service</b><a class="big" href="tel:+19494963639">(949) 496-3639</a><br><span style="font-size:14px;">Fax: (949) 496-3638</span></div>
+      </div>
+      <div class="ct-block">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><b>Headquarters / Warehouse</b><span>32959 Calle Perfecto, Ste C<br>San Juan Capistrano, CA 92675</span></div>
+      </div>
+      <div class="ct-block">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        <div><b>Mailing address</b><span>Seaside Air Enterprises, Inc.<br>32959 Calle Perfecto, Ste C, San Juan Capistrano, CA 92675</span></div>
+      </div>
+      <div class="ct-block">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div><b>Hours</b><span>Mon–Fri 8:00 AM – 5:00 PM<br>Saturday 8:00 AM – 12:00 PM</span></div>
+      </div>
+    </div>
+
+    <div class="form">
+      <h3>Request a free estimate</h3>
+      <p class="fp">Tell us what you need and the best way to reach you. For emergencies, please call.</p>
+      <form id="seasideForm" action="https://formspree.io/f/SEASIDE_FORM_ID" method="POST">
+        <input type="hidden" name="_subject" value="New estimate request — Seaside AC &amp; Heating">
+        <!-- honeypot spam trap -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="row">
+          <div class="fld"><label for="n">Name</label><input id="n" name="name" type="text" placeholder="Your name" required></div>
+          <div class="fld"><label for="p">Phone</label><input id="p" name="phone" type="tel" placeholder="(949) 000-0000"></div>
+        </div>
+        <div class="fld"><label for="e">Email</label><input id="e" name="email" type="email" placeholder="you@email.com" required></div>
+        <div class="fld"><label for="s">How can we help?</label>
+          <select id="s" name="service">
+            <option>AC repair</option>
+            <option>Furnace / heating repair</option>
+            <option>New system / installation</option>
+            <option>Maintenance / tune-up</option>
+            <option>Indoor air quality</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="fld"><label for="m">Message</label><textarea id="m" name="message" placeholder="Tell us a bit about your home or system…"></textarea></div>
+        <button class="btn btn-amber" type="submit">Send request</button>
+      </form>
+      <div class="form-success" id="seasideSuccess">
+        ✓ Request sent! We'll be in touch shortly.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <a class="brand" href="#top" aria-label="Seaside home">
+          <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect width="48" height="48" rx="11" fill="#143949"/>
+            <path d="M9 30c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2 2.5-2 5-2 2.5 2 5 2" stroke="#0F8C99" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="24" cy="17" r="6.5" fill="none" stroke="#E2922E" stroke-width="2.4"/>
+            <path d="M24 13.5V17l2.4 1.6" stroke="#E2922E" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+          <span class="brand-text"><strong>SEASIDE</strong><span style="color:#5bc2cd;">Air Conditioning &amp; Heating</span></span>
+        </a>
+        <p>Family-owned Orange County HVAC contractor since 1997. Honest, competitively priced, and guaranteed. Energy-saving tune-ups, repair, maintenance, service, and new installations.</p>
+        <p style="color:#7e979c;font-size:13px;">CA Contractor License #736214 · NATE Certified</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">AC repair &amp; replacement</a></li>
+          <li><a href="#services">Furnace &amp; heating</a></li>
+          <li><a href="#services">Ducting &amp; duct cleaning</a></li>
+          <li><a href="#services">Indoor air quality</a></li>
+          <li><a href="#services">New installation</a></li>
+          <li><a href="#services">Maintenance contracts</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+19494963639">(949) 496-3639</a></li>
+          <li><span style="color:#9fb6ba;">Fax: (949) 496-3638</span></li>
+          <li><span style="color:#9fb6ba;">32959 Calle Perfecto, Ste C</span></li>
+          <li><span style="color:#9fb6ba;">San Juan Capistrano, CA 92675</span></li>
+          <li><span style="color:#9fb6ba;">Mon–Fri 8–5 · Sat 8–12</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© <span id="yr"></span> Seaside Air Conditioning and Heating, Inc. All rights reserved.</span>
+      <span>Serving Orange, Riverside, Los Angeles, San Bernardino, Imperial &amp; San Diego counties.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Formspree AJAX submit
+  (function(){
+    var form = document.getElementById('seasideForm');
+    var success = document.getElementById('seasideSuccess');
+    if (!form) return;
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var data = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(function(r){
+        if (r.ok) {
+          form.style.display = 'none';
+          success.style.display = 'block';
+        } else {
+          alert('Something went wrong — please call (949) 496-3639 directly.');
+        }
+      }).catch(function(){
+        alert('Something went wrong — please call (949) 496-3639 directly.');
+      });
+    });
+  })();
+</script>
+</body>
+</html>
