@@ -404,10 +404,10 @@
       <div class="url-box">
         <label for="siteUrl">// your current website</label>
         <div class="url-row">
-          <input id="siteUrl" type="url" placeholder="https://yourbusiness.com" inputmode="url">
-          <button class="btn btn-mari" type="button" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Send →</button>
+          <input id="siteUrl" type="text" placeholder="yourbusiness.com" inputmode="url">
+          <button id="siteUrlSend" class="btn btn-mari" type="button">Send →</button>
         </div>
-        <p style="font-size:13px;color:#8a8478;margin:14px 0 0;font-family:'JetBrains Mono',monospace;">Submitting sends your URL to OC Web Work so we can prep a rebuild direction. No obligation.</p>
+        <p id="siteUrlNote" style="font-size:13px;color:#8a8478;margin:14px 0 0;font-family:'JetBrains Mono',monospace;">Submitting sends your URL to OC Web Work so we can prep a rebuild direction. No obligation.</p>
       </div>
       <div class="paths">
         <div class="path">
@@ -517,7 +517,7 @@
           <div class="fld"><label for="cb">Business</label><input id="cb" name="business" type="text" placeholder="Business name"></div>
         </div>
         <div class="fld"><label for="cu">Current website</label><input id="cu" name="current_website" type="text" placeholder="yourbusiness.com"></div>
-        <div class="fld"><label for="cw">What's not working?</label><textarea id="cw" name="message" placeholder="Slow, looks dated, bad on phones, can't update it…"></textarea></div>
+        <div class="fld"><label for="cw">Comments / Modifications</label><textarea id="cw" name="message" placeholder="Tell us what you're after — a refresh, specific changes, what's not working…"></textarea></div>
         <div class="frow">
           <div class="fld"><label for="ce">Email</label><input id="ce" name="email" type="email" placeholder="you@email.com" required></div>
           <div class="fld"><label for="cbud">Budget</label><input id="cbud" name="budget" type="text" placeholder="$1,000–2,000"></div>
@@ -621,6 +621,35 @@
         alert('Something went wrong — please email projects@ocwebwork.com directly.');
       });
     });
+
+    // Hero "// your current website" quick-submit
+    var siteUrlInput = document.getElementById('siteUrl');
+    var siteUrlBtn   = document.getElementById('siteUrlSend');
+    var siteUrlNote  = document.getElementById('siteUrlNote');
+    if (siteUrlBtn) {
+      var sendHeroUrl = function(){
+        var url = siteUrlInput.value.trim();
+        if (!url) { siteUrlInput.focus(); return; }
+
+        // Capture the interest in the sheet right away
+        fetch(SHEET_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: JSON.stringify({ current_website: url, message: '[Hero quick-submit — visitor entered their site URL]' })
+        });
+
+        // Pre-fill the full form so they can add contact details, and scroll to it
+        var cu = document.getElementById('cu');
+        if (cu) cu.value = url;
+        siteUrlNote.textContent = '✓ Got it — add your name and email below so we can send your rebuild direction.';
+        siteUrlNote.style.color = '#A66E09';
+        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        var cn = document.getElementById('cn');
+        if (cn) setTimeout(function(){ cn.focus(); }, 600);
+      };
+      siteUrlBtn.addEventListener('click', sendHeroUrl);
+      siteUrlInput.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); sendHeroUrl(); } });
+    }
   })();
 </script>
 </body>
