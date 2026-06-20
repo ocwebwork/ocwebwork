@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Santa Margarita Plumbing, Heating &amp; Air — Your Neighborhood Plumber · Rancho Santa Margarita</title>
+<meta name="description" content="Family plumbing, heating &amp; air serving Rancho Santa Margarita and South Orange County for over 30 years. Leak detection, slab leak repair, drain cleaning, re-pipes, water heaters, and more. Call (949) 858-3818.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --deep:#0E2233;       /* deep marine navy */
+    --navy:#102A3E;
+    --navy-2:#16364E;
+    --copper:#C17C46;     /* copper / brass — the re-pipe nod */
+    --copper-dk:#A5612F;
+    --copper-lt:#E7C9A8;
+    --water:#2E6E86;      /* muted water blue */
+    --paper:#F7F3EC;      /* warm off-white */
+    --mist:#EAF0F1;       /* cool tint */
+    --ink:#152A3A;
+    --slate:#46586312;
+    --body:#41525C;
+    --line:#DDE5E4;
+    --line-warm:#E7DECF;
+    --white:#fff;
+    --maxw:1180px;
+    --r:16px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;font-family:"Mulish",system-ui,sans-serif;color:var(--body);
+    background:var(--paper);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif;color:var(--ink);margin:0;line-height:1.08;font-weight:600;}
+  a{color:var(--water);text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    font-family:"Mulish",sans-serif;font-weight:800;font-size:12.5px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--copper-dk);display:inline-flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:24px;height:2px;background:var(--copper);display:inline-block;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;font-family:"Mulish",sans-serif;font-weight:800;
+    font-size:15px;letter-spacing:.01em;padding:15px 26px;border-radius:10px;border:2px solid transparent;
+    cursor:pointer;transition:transform .14s ease,background .2s ease,color .2s ease;text-align:center;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-copper{background:var(--copper);color:#241200;}
+  .btn-copper:hover{background:var(--copper-dk);color:#fff;}
+  .btn-navy{background:var(--navy);color:#fff;}
+  .btn-navy:hover{background:var(--deep);}
+  .btn-line{border-color:rgba(255,255,255,.45);color:#fff;}
+  .btn-line:hover{border-color:#fff;background:rgba(255,255,255,.08);}
+  .btn-ghost{border-color:var(--line);color:var(--ink);background:#fff;}
+  .btn-ghost:hover{border-color:var(--copper);color:var(--copper-dk);}
+  :focus-visible{outline:3px solid var(--copper);outline-offset:3px;border-radius:5px;}
+
+  /* ===== Utility bar ===== */
+  .util{background:var(--deep);color:#c7d6db;font-size:13.5px;}
+  .util .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:9px 24px;flex-wrap:wrap;}
+  .util a{color:#c7d6db;}
+  .util-left{display:flex;gap:22px;flex-wrap:wrap;align-items:center;}
+  .util-item{display:inline-flex;gap:8px;align-items:center;}
+  .util-item svg{width:15px;height:15px;flex:none;color:var(--copper);}
+  .util-right{font-family:"Mulish",sans-serif;font-weight:700;letter-spacing:.04em;color:#8fa6ad;font-size:12.5px;}
+
+  /* ===== Header ===== */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(247,243,236,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line-warm);}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:13px 24px;gap:18px;}
+  .brand{display:flex;align-items:center;gap:13px;}
+  .brand-mark{width:46px;height:46px;flex:none;}
+  .brand-text strong{font-family:"Fraunces",serif;font-weight:700;font-size:19px;color:var(--ink);display:block;line-height:1.02;letter-spacing:-.01em;}
+  .brand-text span{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--copper-dk);font-family:"Mulish",sans-serif;font-weight:700;}
+  nav.links{display:flex;gap:28px;align-items:center;}
+  nav.links a{font-family:"Mulish",sans-serif;font-weight:700;font-size:14.5px;color:var(--ink);}
+  nav.links a:hover{color:var(--copper-dk);}
+  .nav-cta{display:flex;gap:12px;align-items:center;}
+  .menu-btn{display:none;background:none;border:0;cursor:pointer;color:var(--ink);}
+
+  /* ===== Hero ===== */
+  .hero{background:var(--navy);color:#d7e3e8;position:relative;overflow:hidden;}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(110% 80% at 85% 10%,rgba(193,124,70,.18),transparent 55%);pointer-events:none;}
+  .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.12fr .88fr;gap:50px;align-items:center;padding:74px 24px 82px;}
+  .hero .tag{font-family:"Fraunces",serif;font-style:italic;font-weight:500;color:var(--copper-lt);font-size:20px;margin-bottom:14px;display:block;}
+  .hero h1{color:#fff;font-size:clamp(40px,5.4vw,64px);font-weight:600;letter-spacing:-.01em;}
+  .hero h1 em{font-style:italic;color:var(--copper);font-weight:600;}
+  .hero .lede{font-size:18.5px;color:#b7cbd2;margin:22px 0 30px;max-width:46ch;}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;}
+  .hero-trust{display:flex;gap:28px;margin-top:40px;flex-wrap:wrap;}
+  .hero-trust div{border-left:2px solid var(--copper);padding-left:14px;}
+  .hero-trust b{font-family:"Fraunces",serif;color:#fff;font-size:23px;font-weight:700;display:block;line-height:1;}
+  .hero-trust small{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:#90a7af;}
+
+  /* signature: 30-year seal + promise card */
+  .hero-card{background:#fff;border-radius:18px;padding:28px 28px 24px;box-shadow:0 30px 60px -30px rgba(0,0,0,.55);position:relative;}
+  .seal{position:absolute;top:-34px;right:-14px;width:96px;height:96px;}
+  .hero-card h3{font-family:"Fraunces",serif;font-size:21px;color:var(--ink);margin-bottom:4px;}
+  .hero-card .sub{font-size:13.5px;color:var(--body);margin-bottom:18px;font-weight:600;}
+  .promise{list-style:none;margin:0;padding:0;display:grid;gap:11px;}
+  .promise li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--ink);font-weight:600;}
+  .promise li svg{width:20px;height:20px;color:var(--copper-dk);flex:none;margin-top:1px;}
+
+  /* ===== Sections ===== */
+  section{padding:82px 0;}
+  .sec-head{max-width:680px;margin-bottom:46px;}
+  .sec-head h2{font-size:clamp(30px,3.8vw,44px);font-weight:600;margin-top:14px;letter-spacing:-.01em;}
+  .sec-head p{margin-top:15px;font-size:18px;}
+
+  /* ===== Trust strip ===== */
+  .strip{background:var(--mist);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px 0;}
+  .strip .wrap{display:flex;gap:36px;justify-content:space-between;flex-wrap:wrap;align-items:center;}
+  .strip-item{display:flex;gap:13px;align-items:center;}
+  .strip-item svg{width:26px;height:26px;color:var(--water);flex:none;}
+  .strip-item b{font-family:"Fraunces",serif;color:var(--ink);font-weight:700;display:block;font-size:15.5px;line-height:1.1;}
+  .strip-item small{font-size:12.5px;color:var(--body);}
+
+  /* ===== Services ===== */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .card{background:#fff;border:1px solid var(--line-warm);border-radius:var(--r);padding:26px 24px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;}
+  .card:hover{transform:translateY(-3px);box-shadow:0 16px 32px -24px rgba(14,34,51,.55);border-color:var(--copper);}
+  .card .ico{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--mist);color:var(--water);margin-bottom:15px;}
+  .card.cu .ico{background:#F4E7D8;color:var(--copper-dk);}
+  .card .ico svg{width:24px;height:24px;}
+  .card h3{font-size:18.5px;font-weight:600;margin-bottom:8px;}
+  .card p{font-size:14.5px;margin:0;color:var(--body);}
+  .svc-note{margin-top:30px;font-size:15px;display:flex;gap:10px;align-items:center;color:var(--body);}
+  .svc-note svg{width:18px;height:18px;color:var(--copper-dk);flex:none;}
+
+  /* ===== About / promise band ===== */
+  .about{background:var(--deep);color:#c7d6db;}
+  .about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .about h2{color:#fff;}
+  .about .eyebrow{color:var(--copper-lt);}
+  .about p{color:#b7cbd2;font-size:17px;margin:18px 0 0;}
+  .pledge{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .pledge .p{background:var(--navy-2);border:1px solid rgba(255,255,255,.08);border-radius:13px;padding:18px 18px;}
+  .pledge .p .n{font-family:"Fraunces",serif;font-style:italic;color:var(--copper);font-size:15px;}
+  .pledge .p b{display:block;color:#fff;font-family:"Mulish",sans-serif;font-weight:700;font-size:15.5px;margin-top:5px;line-height:1.3;}
+
+  /* ===== Service area ===== */
+  .area .wrap{display:grid;grid-template-columns:.92fr 1.08fr;gap:54px;align-items:start;}
+  .counties{display:flex;flex-wrap:wrap;gap:9px;margin-top:6px;}
+  .pill{font-family:"Mulish",sans-serif;font-weight:700;font-size:13.5px;background:#fff;color:var(--ink);padding:8px 15px;border-radius:999px;border:1px solid var(--line-warm);}
+  .pill.hub{background:var(--navy);color:#fff;border-color:var(--navy);}
+
+  /* ===== Contact ===== */
+  .contact{background:var(--mist);}
+  .contact .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:54px;align-items:start;}
+  .ct-block{display:flex;gap:14px;margin-bottom:22px;}
+  .ct-block svg{width:22px;height:22px;color:var(--water);flex:none;margin-top:3px;}
+  .ct-block b{font-family:"Mulish",sans-serif;font-weight:800;color:var(--ink);display:block;font-size:13px;letter-spacing:.04em;text-transform:uppercase;margin-bottom:3px;}
+  .ct-block a,.ct-block span{font-size:16.5px;color:var(--body);}
+  .ct-block .big{font-size:23px;font-family:"Fraunces",serif;font-weight:700;color:var(--ink);}
+  .form{background:#fff;border:1px solid var(--line-warm);border-radius:var(--r);padding:30px;}
+  .form h3{font-size:23px;font-weight:600;margin-bottom:6px;}
+  .form .fp{font-size:14.5px;margin-bottom:22px;}
+  .fld{margin-bottom:16px;}
+  .fld label{font-family:"Mulish",sans-serif;font-weight:700;font-size:13px;letter-spacing:.02em;color:var(--ink);display:block;margin-bottom:6px;}
+  .fld input,.fld textarea,.fld select{width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:10px;font-family:"Mulish",sans-serif;font-size:15.5px;color:var(--ink);background:#fdfdfb;}
+  .fld input:focus,.fld textarea:focus,.fld select:focus{outline:none;border-color:var(--water);}
+  .fld textarea{resize:vertical;min-height:108px;}
+  .form .row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .form .btn{width:100%;justify-content:center;margin-top:6px;}
+  .form-success{display:none;text-align:center;padding:28px;font-family:"Fraunces",serif;font-size:18px;color:var(--water);}
+
+  /* ===== Footer ===== */
+  footer{background:var(--deep);color:#90a7af;padding:54px 0 30px;}
+  footer .top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.1);}
+  footer .brand-text strong{color:#fff;}
+  footer p{font-size:14.5px;margin:16px 0 0;color:#90a7af;max-width:40ch;}
+  footer h4{font-family:"Mulish",sans-serif;font-weight:800;color:#fff;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:15px;}
+  footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px;}
+  footer ul a{color:#b7cbd2;font-size:14.5px;}
+  footer ul a:hover{color:#fff;}
+  footer .bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:22px;font-size:13px;color:#74909a;}
+
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;gap:46px;padding:52px 24px 60px;}
+    .hero-card{order:2;}
+    .about .wrap,.area .wrap,.contact .wrap{grid-template-columns:1fr;gap:36px;}
+    .svc-grid{grid-template-columns:repeat(2,1fr);}
+    nav.links{display:none;}
+    .menu-btn{display:block;}
+    .nav-cta .btn-ghost{display:none;}
+  }
+  @media (max-width:560px){
+    section{padding:56px 0;}
+    .svc-grid,.pledge,.form .row{grid-template-columns:1fr;}
+    .util-left{gap:14px;}
+    .hero-trust{gap:20px;}
+  }
+  @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important;}}
+</style>
+</head>
+<body>
+
+<!-- ===== Utility bar ===== -->
+<div class="util">
+  <div class="wrap">
+    <div class="util-left">
+      <a class="util-item" href="tel:+19498583818">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.4 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+        (949) 858-3818
+      </a>
+      <span class="util-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Rancho Santa Margarita, CA
+      </span>
+    </div>
+    <div class="util-right">SERVING SOUTH ORANGE COUNTY FOR 30+ YEARS</div>
+  </div>
+</div>
+
+<!-- ===== Header ===== -->
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Santa Margarita Plumbing, Heating and Air home">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <rect width="48" height="48" rx="11" fill="#102A3E"/>
+        <path d="M24 9c0 0 10 11 10 19a10 10 0 0 1-20 0c0-8 10-19 10-19z" fill="none" stroke="#C17C46" stroke-width="2.6"/>
+        <path d="M19 28a5 5 0 0 0 5 5" fill="none" stroke="#C17C46" stroke-width="2.6" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-text">
+        <strong>Santa Margarita</strong>
+        <span>Plumbing · Heating · Air</span>
+      </span>
+    </a>
+    <nav class="links" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#promise">Our Promise</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="tel:+19498583818">Call now</a>
+      <a class="btn btn-copper" href="#contact">Request service</a>
+    </div>
+    <button class="menu-btn" aria-label="Open menu" onclick="document.querySelector('nav.links').scrollIntoView()">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="tag">"Your Neighborhood Plumber"</span>
+      <h1>Honest plumbing, heating &amp; air — <em>done right</em>, the first time.</h1>
+      <p class="lede">For over 30 years, families and businesses across Rancho Santa Margarita and South Orange County have trusted us to show up on time, keep it clean, and stand behind every job.</p>
+      <div class="hero-cta">
+        <a class="btn btn-copper" href="tel:+19498583818">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.4 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+          (949) 858-3818
+        </a>
+        <a class="btn btn-line" href="#contact">Request service</a>
+      </div>
+      <div class="hero-trust">
+        <div><b>30+ yrs</b><small>Serving South OC</small></div>
+        <div><b>Guaranteed</b><small>Work we stand behind</small></div>
+        <div><b>Emergency</b><small>Service available</small></div>
+      </div>
+    </div>
+
+    <!-- Signature: promise card + 30-year seal -->
+    <div class="hero-card">
+      <svg class="seal" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="46" fill="#102A3E"/>
+        <circle cx="50" cy="50" r="46" fill="none" stroke="#C17C46" stroke-width="2"/>
+        <circle cx="50" cy="50" r="38" fill="none" stroke="#C17C46" stroke-width="1" opacity=".5"/>
+        <text x="50" y="44" text-anchor="middle" fill="#fff" font-family="Fraunces,serif" font-weight="700" font-size="26">30+</text>
+        <text x="50" y="62" text-anchor="middle" fill="#E7C9A8" font-family="Mulish,sans-serif" font-weight="800" font-size="9" letter-spacing="1.5">YEARS</text>
+      </svg>
+      <h3>Our promise to you</h3>
+      <div class="sub">The standard we hold on every single job.</div>
+      <ul class="promise">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>To be honest, and to be on time</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>To be clean &amp; neat in your home</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Experienced, professional technicians</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>A fair price — and guaranteed work</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Trust strip ===== -->
+<div class="strip">
+  <div class="wrap">
+    <div class="strip-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 5v6c0 5 3.4 8.6 8 11 4.6-2.4 8-6 8-11V5l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>
+      <div><b>Over 30 years</b><small>Local, trusted experience</small></div>
+    </div>
+    <div class="strip-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <div><b>On time</b><small>We respect your schedule</small></div>
+    </div>
+    <div class="strip-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
+      <div><b>Guaranteed work</b><small>We stand behind every job</small></div>
+    </div>
+    <div class="strip-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>
+      <div><b>Residential &amp; commercial</b><small>Homes and businesses</small></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Services ===== -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What we do</span>
+      <h2>Full-service plumbing, heating &amp; air</h2>
+      <p>From a hidden slab leak to a whole-home re-pipe, our technicians handle it — for homes and businesses across South Orange County.</p>
+    </div>
+
+    <div class="svc-grid">
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+        <h3>Electronic leak detection</h3>
+        <p>Pinpoint hidden leaks fast and accurately — before they become costly damage.</p>
+      </div>
+      <div class="card cu">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21v-9h14v9M8 12V8a4 4 0 0 1 8 0v4"/></svg></div>
+        <h3>Slab leak repair</h3>
+        <p>Expert diagnosis and repair of leaks beneath your foundation, done with care.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v6M9 5l3-3 3 3M6 22a4 4 0 0 1-4-4c0-3 4-8 4-8s4 5 4 8a4 4 0 0 1-4 4z"/></svg></div>
+        <h3>Drain cleaning &amp; hydro-jetting</h3>
+        <p>Clear stubborn clogs and build-up with high-pressure hydro-jetting that lasts.</p>
+      </div>
+      <div class="card cu">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h10v10H4zM14 10h6v4h-6M7 4v3M11 4v3"/></svg></div>
+        <h3>Copper re-pipes</h3>
+        <p>Full home and commercial re-piping to replace aging, failing, or corroded lines.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="3" width="12" height="18" rx="3"/><path d="M9 7h6M12 14v3"/></svg></div>
+        <h3>Tank &amp; tankless water heaters</h3>
+        <p>Repair, replacement, and new installation — including efficient tankless systems.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M3 12h3M18 12h3M5 19l9-9M12 3v3"/></svg></div>
+        <h3>Underground camera work</h3>
+        <p>Video inspection of underground lines to find problems without guesswork or digging.</p>
+      </div>
+      <div class="card cu">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h6l2-3 3 6 2-3h5"/></svg></div>
+        <h3>Gas line repair &amp; replacement</h3>
+        <p>Safe, code-compliant gas line repair, replacement, and new installation.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18a4 4 0 0 0 3-7V4a2 2 0 1 0-4 0v7a4 4 0 0 0 1 7z"/><path d="M15 6h3M15 10h3M15 14h3"/></svg></div>
+        <h3>A/C &amp; heating service</h3>
+        <p>Service and repair to keep your home comfortable through every season.</p>
+      </div>
+      <div class="card cu">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M6 21V11h5v10M14 21V7h4v14M6 7l2.5-2L11 7"/></svg></div>
+        <h3>Remodeling — kitchen &amp; bath</h3>
+        <p>Plumbing for kitchen and bathroom repairs, upgrades, and full remodels.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div>
+        <h3>Commercial &amp; service contracts</h3>
+        <p>Commercial plumbing, ongoing service contracts, and insurance work handled start to finish.</p>
+      </div>
+    </div>
+
+    <p class="svc-note">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      Have a plumbing emergency? We offer emergency service — <a href="tel:+19498583818">call (949) 858-3818</a>.
+    </p>
+  </div>
+</section>
+
+<!-- ===== About ===== -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Who we are</span>
+      <h2>Three decades as your neighborhood plumber</h2>
+      <p>Santa Margarita Plumbing, Heating &amp; Air has served Rancho Santa Margarita and the surrounding South Orange County communities for over 30 years. We're local — the same neighbors you see at the store, working hard to earn and keep your trust.</p>
+      <p>Whether it's a small repair or a major project, we treat your home like our own: honest answers, fair prices, clean work, and a guarantee behind every job.</p>
+    </div>
+    <div>
+      <div class="ct-block" style="margin-bottom:26px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#C17C46" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><b style="color:#fff;">Local headquarters</b><span style="color:#b7cbd2;">22521 Avenida Empresa<br>Rancho Santa Margarita, CA 92688</span></div>
+      </div>
+      <div class="pledge">
+        <div class="p"><span class="n">To be honest</span><b>Straight answers, every time</b></div>
+        <div class="p"><span class="n">To be on time</span><b>We respect your day</b></div>
+        <div class="p"><span class="n">Clean &amp; neat</span><b>We leave it better</b></div>
+        <div class="p"><span class="n">A fair price</span><b>No surprises, no games</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Promise band ===== -->
+<section id="promise">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Our promise</span>
+      <h2>Seven things we promise on every job</h2>
+      <p>It's simple, and it hasn't changed in 30 years. This is what you can count on when our truck pulls up.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="card"><h3>1 · Be honest</h3><p>Clear, truthful answers about what's wrong and what it takes to fix it.</p></div>
+      <div class="card cu"><h3>2 · Be on time</h3><p>We show up when we say we will and respect your schedule.</p></div>
+      <div class="card"><h3>3 · Be clean &amp; neat</h3><p>We protect your home and leave the work area cleaner than we found it.</p></div>
+      <div class="card cu"><h3>4 · Experienced techs</h3><p>Experienced, professional technicians who know the work inside out.</p></div>
+      <div class="card"><h3>5 · A fair price</h3><p>Honest, up-front pricing — no surprises and no pressure.</p></div>
+      <div class="card cu"><h3>6 · Guarantee our work</h3><p>We stand behind every job we do, plain and simple.</p></div>
+      <div class="card" style="grid-column:span 1;"><h3>7 · Make you happy</h3><p>The job isn't done until you're satisfied with the result.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Service area ===== -->
+<section class="area" id="area">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Where we work</span>
+      <h2>Proudly serving South Orange County</h2>
+      <p style="margin-top:16px;">From our Rancho Santa Margarita home base, we serve the neighborhoods nearby — the same communities we live in.</p>
+    </div>
+    <div>
+      <div class="counties">
+        <span class="pill hub">Rancho Santa Margarita</span>
+        <span class="pill">Mission Viejo</span>
+        <span class="pill">Ladera Ranch</span>
+        <span class="pill">Coto de Caza</span>
+        <span class="pill">Dove Canyon</span>
+        <span class="pill">Robinson Ranch</span>
+        <span class="pill">Foothill Ranch</span>
+        <span class="pill">Rancho Cielo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Get in touch</span>
+      <h2 style="font-size:clamp(30px,3.8vw,44px);margin-top:14px;">Request service today</h2>
+      <p style="margin:16px 0 30px;">Call us for fast help, or send a message and we'll get right back to you. For plumbing emergencies, please call.</p>
+
+      <div class="ct-block">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.4 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+        <div><b>Call us</b><a class="big" href="tel:+19498583818">(949) 858-3818</a></div>
+      </div>
+      <div class="ct-block">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><b>Visit / mail</b><span>22521 Avenida Empresa<br>Rancho Santa Margarita, CA 92688</span></div>
+      </div>
+      <div class="ct-block">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.4 8.6 8 11 4.6-2.4 8-6 8-11V5l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>
+        <div><b>Why us</b><span>Over 30 years local · Honest · Guaranteed work</span></div>
+      </div>
+    </div>
+
+    <div class="form">
+      <h3>Request service</h3>
+      <p class="fp">Tell us what you need and the best way to reach you. For emergencies, please call.</p>
+      <form id="smForm" onsubmit="return false;">
+        <div class="row">
+          <div class="fld"><label for="n">Name</label><input id="n" type="text" placeholder="Your name"></div>
+          <div class="fld"><label for="p">Phone</label><input id="p" type="tel" placeholder="(949) 000-0000"></div>
+        </div>
+        <div class="fld"><label for="e">Email</label><input id="e" type="email" placeholder="you@email.com"></div>
+        <div class="fld"><label for="s">How can we help?</label>
+          <select id="s">
+            <option>Leak detection / slab leak</option>
+            <option>Drain cleaning / hydro-jetting</option>
+            <option>Water heater</option>
+            <option>Re-pipe</option>
+            <option>Gas line</option>
+            <option>Heating / AC</option>
+            <option>Remodel — kitchen or bath</option>
+            <option>Commercial / other</option>
+          </select>
+        </div>
+        <div class="fld"><label for="m">Details</label><textarea id="m" placeholder="Tell us a bit about the problem…"></textarea></div>
+        <button class="btn btn-copper" type="submit" onclick="document.getElementById('smForm').style.display='none';document.getElementById('smOk').style.display='block';">Request service</button>
+      </form>
+      <div class="form-success" id="smOk">✓ Thanks! We'll be in touch shortly. For emergencies, call (949) 858-3818.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <a class="brand" href="#top" aria-label="Santa Margarita Plumbing home">
+          <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect width="48" height="48" rx="11" fill="#16364E"/>
+            <path d="M24 9c0 0 10 11 10 19a10 10 0 0 1-20 0c0-8 10-19 10-19z" fill="none" stroke="#C17C46" stroke-width="2.6"/>
+            <path d="M19 28a5 5 0 0 0 5 5" fill="none" stroke="#C17C46" stroke-width="2.6" stroke-linecap="round"/>
+          </svg>
+          <span class="brand-text"><strong>Santa Margarita</strong><span style="color:#E7C9A8;">Plumbing · Heating · Air</span></span>
+        </a>
+        <p>"Your Neighborhood Plumber." Serving Rancho Santa Margarita and South Orange County for over 30 years — honest, on time, and guaranteed.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Leak detection &amp; slab leaks</a></li>
+          <li><a href="#services">Drain cleaning &amp; hydro-jetting</a></li>
+          <li><a href="#services">Water heaters &amp; re-pipes</a></li>
+          <li><a href="#services">Gas lines &amp; remodeling</a></li>
+          <li><a href="#services">Heating &amp; air</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+19498583818">(949) 858-3818</a></li>
+          <li><span style="color:#90a7af;">22521 Avenida Empresa</span></li>
+          <li><span style="color:#90a7af;">Rancho Santa Margarita, CA 92688</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© <span id="yr"></span> Santa Margarita Plumbing, Heating &amp; Air. All rights reserved.</span>
+      <span>Serving Rancho Santa Margarita · Mission Viejo · Ladera Ranch · Coto de Caza &amp; nearby.</span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
