@@ -11,20 +11,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --deep:#0E2233;       /* deep marine navy */
-    --navy:#102A3E;
-    --navy-2:#16364E;
-    --copper:#C17C46;     /* copper / brass — the re-pipe nod */
-    --copper-dk:#A5612F;
-    --copper-lt:#E7C9A8;
-    --water:#2E6E86;      /* muted water blue */
-    --paper:#F7F3EC;      /* warm off-white */
-    --mist:#EAF0F1;       /* cool tint */
-    --ink:#152A3A;
-    --slate:#46586312;
-    --body:#41525C;
-    --line:#DDE5E4;
-    --line-warm:#E7DECF;
+    --deep:#08265E;       /* deep navy-blue: util bar, about, footer */
+    --navy:#0C3F94;       /* rich blue: hero */
+    --navy-2:#14489E;
+    --copper:#116DFF;     /* primary blue — matches original site */
+    --copper-dk:#0B53C9;  /* darker blue for hover */
+    --copper-lt:#B0F9F7;  /* pale cyan for dark backgrounds */
+    --water:#12A6D8;      /* cyan accent */
+    --paper:#F4F8FE;      /* cool near-white */
+    --mist:#E7F1FD;       /* light blue tint */
+    --ink:#0E2742;
+    --body:#46586A;
+    --line:#DBE6F3;
+    --line-warm:#DBE6F3;
     --white:#fff;
     --maxw:1180px;
     --r:16px;
@@ -50,7 +49,7 @@
     cursor:pointer;transition:transform .14s ease,background .2s ease,color .2s ease;text-align:center;
   }
   .btn:hover{transform:translateY(-2px);}
-  .btn-copper{background:var(--copper);color:#241200;}
+  .btn-copper{background:var(--copper);color:#fff;}
   .btn-copper:hover{background:var(--copper-dk);color:#fff;}
   .btn-navy{background:var(--navy);color:#fff;}
   .btn-navy:hover{background:var(--deep);}
@@ -84,11 +83,11 @@
 
   /* ===== Hero ===== */
   .hero{background:var(--navy);color:#d7e3e8;position:relative;overflow:hidden;}
-  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(110% 80% at 85% 10%,rgba(193,124,70,.18),transparent 55%);pointer-events:none;}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(110% 80% at 85% 10%,rgba(32,190,239,.22),transparent 55%);pointer-events:none;}
   .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.12fr .88fr;gap:50px;align-items:center;padding:74px 24px 82px;}
   .hero .tag{font-family:"Fraunces",serif;font-style:italic;font-weight:500;color:var(--copper-lt);font-size:20px;margin-bottom:14px;display:block;}
   .hero h1{color:#fff;font-size:clamp(40px,5.4vw,64px);font-weight:600;letter-spacing:-.01em;}
-  .hero h1 em{font-style:italic;color:var(--copper);font-weight:600;}
+  .hero h1 em{font-style:italic;color:#5BD2F6;font-weight:600;}
   .hero .lede{font-size:18.5px;color:#b7cbd2;margin:22px 0 30px;max-width:46ch;}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap;}
   .hero-trust{display:flex;gap:28px;margin-top:40px;flex-wrap:wrap;}
@@ -124,7 +123,7 @@
   .card{background:#fff;border:1px solid var(--line-warm);border-radius:var(--r);padding:26px 24px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;}
   .card:hover{transform:translateY(-3px);box-shadow:0 16px 32px -24px rgba(14,34,51,.55);border-color:var(--copper);}
   .card .ico{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--mist);color:var(--water);margin-bottom:15px;}
-  .card.cu .ico{background:#F4E7D8;color:var(--copper-dk);}
+  .card.cu .ico{background:#E2F0FF;color:var(--copper-dk);}
   .card .ico svg{width:24px;height:24px;}
   .card h3{font-size:18.5px;font-weight:600;margin-bottom:8px;}
   .card p{font-size:14.5px;margin:0;color:var(--body);}
@@ -221,9 +220,9 @@
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Santa Margarita Plumbing, Heating and Air home">
       <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-        <rect width="48" height="48" rx="11" fill="#102A3E"/>
-        <path d="M24 9c0 0 10 11 10 19a10 10 0 0 1-20 0c0-8 10-19 10-19z" fill="none" stroke="#C17C46" stroke-width="2.6"/>
-        <path d="M19 28a5 5 0 0 0 5 5" fill="none" stroke="#C17C46" stroke-width="2.6" stroke-linecap="round"/>
+        <rect width="48" height="48" rx="11" fill="#0A2E73"/>
+        <path d="M24 9c0 0 10 11 10 19a10 10 0 0 1-20 0c0-8 10-19 10-19z" fill="none" stroke="#20BEEF" stroke-width="2.6"/>
+        <path d="M19 28a5 5 0 0 0 5 5" fill="none" stroke="#20BEEF" stroke-width="2.6" stroke-linecap="round"/>
       </svg>
       <span class="brand-text">
         <strong>Santa Margarita</strong>
@@ -271,11 +270,11 @@
     <!-- Signature: promise card + 30-year seal -->
     <div class="hero-card">
       <svg class="seal" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="46" fill="#102A3E"/>
-        <circle cx="50" cy="50" r="46" fill="none" stroke="#C17C46" stroke-width="2"/>
-        <circle cx="50" cy="50" r="38" fill="none" stroke="#C17C46" stroke-width="1" opacity=".5"/>
+        <circle cx="50" cy="50" r="46" fill="#0A2E73"/>
+        <circle cx="50" cy="50" r="46" fill="none" stroke="#20BEEF" stroke-width="2"/>
+        <circle cx="50" cy="50" r="38" fill="none" stroke="#20BEEF" stroke-width="1" opacity=".5"/>
         <text x="50" y="44" text-anchor="middle" fill="#fff" font-family="Fraunces,serif" font-weight="700" font-size="26">30+</text>
-        <text x="50" y="62" text-anchor="middle" fill="#E7C9A8" font-family="Mulish,sans-serif" font-weight="800" font-size="9" letter-spacing="1.5">YEARS</text>
+        <text x="50" y="62" text-anchor="middle" fill="#B0F9F7" font-family="Mulish,sans-serif" font-weight="800" font-size="9" letter-spacing="1.5">YEARS</text>
       </svg>
       <h3>Our promise to you</h3>
       <div class="sub">The standard we hold on every single job.</div>
@@ -391,7 +390,7 @@
     </div>
     <div>
       <div class="ct-block" style="margin-bottom:26px;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#C17C46" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#20BEEF" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         <div><b style="color:#fff;">Local headquarters</b><span style="color:#b7cbd2;">22521 Avenida Empresa<br>Rancho Santa Margarita, CA 92688</span></div>
       </div>
       <div class="pledge">
@@ -505,11 +504,11 @@
       <div>
         <a class="brand" href="#top" aria-label="Santa Margarita Plumbing home">
           <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-            <rect width="48" height="48" rx="11" fill="#16364E"/>
-            <path d="M24 9c0 0 10 11 10 19a10 10 0 0 1-20 0c0-8 10-19 10-19z" fill="none" stroke="#C17C46" stroke-width="2.6"/>
-            <path d="M19 28a5 5 0 0 0 5 5" fill="none" stroke="#C17C46" stroke-width="2.6" stroke-linecap="round"/>
+            <rect width="48" height="48" rx="11" fill="#14489E"/>
+            <path d="M24 9c0 0 10 11 10 19a10 10 0 0 1-20 0c0-8 10-19 10-19z" fill="none" stroke="#20BEEF" stroke-width="2.6"/>
+            <path d="M19 28a5 5 0 0 0 5 5" fill="none" stroke="#20BEEF" stroke-width="2.6" stroke-linecap="round"/>
           </svg>
-          <span class="brand-text"><strong>Santa Margarita</strong><span style="color:#E7C9A8;">Plumbing · Heating · Air</span></span>
+          <span class="brand-text"><strong>Santa Margarita</strong><span style="color:#B0F9F7;">Plumbing · Heating · Air</span></span>
         </a>
         <p>"Your Neighborhood Plumber." Serving Rancho Santa Margarita and South Orange County for over 30 years — honest, on time, and guaranteed.</p>
       </div>
