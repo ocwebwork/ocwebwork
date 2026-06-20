@@ -599,19 +599,19 @@
       btn.disabled = true;
       btn.textContent = 'Sending…';
 
-      // Form-encoded body — this is CORS-safelisted, so Google never blocks it
-      var body = new URLSearchParams();
-      body.append('name',            form.querySelector('[name="name"]').value);
-      body.append('business',        form.querySelector('[name="business"]').value);
-      body.append('current_website', form.querySelector('[name="current_website"]').value);
-      body.append('email',           form.querySelector('[name="email"]').value);
-      body.append('budget',          form.querySelector('[name="budget"]').value);
-      body.append('message',         form.querySelector('[name="message"]').value);
+      var payload = {
+        name:             form.querySelector('[name="name"]').value,
+        business:         form.querySelector('[name="business"]').value,
+        current_website:  form.querySelector('[name="current_website"]').value,
+        email:            form.querySelector('[name="email"]').value,
+        budget:           form.querySelector('[name="budget"]').value,
+        message:          form.querySelector('[name="message"]').value
+      };
 
       fetch(SHEET_URL, {
         method: 'POST',
         mode: 'no-cors',
-        body: body
+        body: JSON.stringify(payload)
       }).then(function(){
         form.style.display = 'none';
         success.style.display = 'block';
